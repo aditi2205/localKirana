@@ -1,21 +1,28 @@
 package com.selfproject.localKirana.dao;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 
 
 @Entity
+@Table(name="KiranaProduct")
 public class KiranaProduct {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Integer pid;
+	@Column
 	private String productName;
+	@Column
 	private Integer quantity;
+	@Column
 	private Float cost;
+	@Column
 	private String category;
 	
 	public Integer getPid() {
@@ -47,6 +54,11 @@ public class KiranaProduct {
 	}
 	public void setCategory(String category) {
 		this.category = category;
+	}
+	@Override
+	public String toString() {
+		return "KiranaProduct [pid=" + pid + ", productName=" + productName + ", quantity=" + quantity + ", cost="
+				+ cost + ", category=" + category + "]";
 	}
 	
 	
